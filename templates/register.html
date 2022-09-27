@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Register | CodeWithHiren</title>
+{% endblock title %}
+
+{% block body %}
+<div class="container">
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+  <ul class="flashes my-2">
+      {% for category, message in messages %}
+      <div class="alert alert-{{category}}   alert-dismissible fade show" role="alert">
+          <strong>  {{message}}</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    
+  </ul>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+  </div>
+
+<div class="text-center my-3">
+  <h1 style="color: blueviolet;">Register</h1>
+</div>
+
+<div class="container my-4">
+
+  <form class="row g-3" action="/register" method="POST">
+    <div class="col-md-6">
+      <label for="first_name" class="form-label">First Name</label>
+      <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name"
+        required>
+    </div>
+    <div class="col-md-6">
+      <label for="last_name" class="form-label">Last Name</label>
+      <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last Name"
+        required>
+    </div>
+    <div class="col-12">
+      <label for="username" class="form-label">Username</label>
+      <input type="text" class="form-control" name="username" id="username" placeholder="Username" required>
+    </div>
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Email</label>
+      <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+    </div>
+    <div class="col-12">
+      <label for="inputAddress2" class="form-label">Password </label>
+      <input type="password" class="form-control" name="password" id="pasword" placeholder="Password" required>
+    </div>
+
+    <div class="col-12 my-4">
+      <button type="submit" class="btn btn-info">Register</button>
+
+    </div>
+  </form>
+</div>
+
+
+{% endblock body %}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Contact | CodeWithHiren</title>
+{% endblock title %}
+
+
+{% block body %}
+<div class="container-fluid my-3">
+    <img src="/static/contact.jpeg" width="1490" height="500" alt="">
+    <!-- <img src="https://source.unsplash.com/1200x400/?mobile,phone" alt=""> -->
+</div>
+<h1>
+    <div class="text-center my-4">Contact Us</div>
+</h1>
+<form action="/contact" method="POST">
+    <div class="container bg-light rounded-5 my-3">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Full Name</label>
+            <input type="text" class="form-control" name="full_name" id="full_name" aria-describedby="full_name" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email </label>
+            <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" required>
+
+        </div>
+
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="text" class="form-control" name="phone" id="phone" required>
+        </div>
+        <div class="mb-3">
+            <label for="messege" class="form-label">Messege</label>
+            <textarea class="form-control" name="messege" id="messege" rows="3" required></textarea>
+
+        </div>
+        <div class="d-grid gap-2 my-4">
+            <button class="btn btn-info " type="submit">Send Messege</button>
+            
+          </div>
+        </div>
+     
+</form>
+<strong> <b><footer class="pt-3 mt-4 text-center   border-top" style="background-color: orange">
+    Copyright © 2022 CodeWithHiren
+</footer></b></strong>
+</div>
+{% endblock body %}
