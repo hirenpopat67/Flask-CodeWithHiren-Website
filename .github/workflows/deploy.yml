@@ -29,5 +29,5 @@ jobs:
 
       - name: Run Flask app
         run: |
-          python app.py
+          gunicorn -w 4 'app:app'
 
