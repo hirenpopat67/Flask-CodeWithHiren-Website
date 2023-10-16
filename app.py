@@ -10,10 +10,11 @@ import os
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI']= 'sqlite:///mydatabase.db'
 app.config['SECRET_KEY'] = 'you-will-never-guess'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
-
+# Disable the ACK_MODIFICATIONS warning by setting it to False
 
 
 @login_manager.user_loader
