@@ -1,4 +1,8 @@
+name: Deploy to GitHub Pages
 
+on:
+  push:
+    branches:
       - main
 
 jobs:
@@ -15,13 +19,15 @@ jobs:
           python-version: 3.x
 
       - name: Set up a virtual environment
-        run: python3 -m venv venv
-          
+        run: python -m venv venv
+
       - name: Activate the virtual environment
         run: source venv/bin/activate
 
       - name: Install dependencies
-        run: pip3 install -r requirements.txt
+        run: pip install -r requirements.txt
 
-      - name: Build Flask app
-        run: python3 app.py
+      - name: Run Flask app
+        run: |
+          python app.py
+
